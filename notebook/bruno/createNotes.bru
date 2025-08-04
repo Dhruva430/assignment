@@ -1,0 +1,26 @@
+meta {
+  name: createNotes
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3000/notes
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: iamhero
+}
+
+body:json {
+  {
+    "content": "This is a test note from API"
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+}

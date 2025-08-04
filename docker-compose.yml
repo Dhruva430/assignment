@@ -1,0 +1,25 @@
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: dhruva
+      POSTGRES_PASSWORD: dhruva
+      POSTGRES_DB: notebook_db
+    ports:
+      - "5432:5432"
+    container_name: notebook_db
+  # app:
+  #   build:
+  #     context: ./notebook
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - db
+  #   container_name: notebook_app
+  #   volumes:
+  #     - ./notebook:/app
+  #   command:
+  #     ["pnpm", "exec", "prisma", "generate", "&&", "pnpm", "run", "start:dev"]
+  #   env_file:
+  #     - ./notebook/.env
