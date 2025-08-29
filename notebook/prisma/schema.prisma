@@ -11,11 +11,9 @@ datasource db {
 model User {
   id        String   @id @default(uuid())
   email     String   @unique
-  password  String
   name      String?
   notes     Note[]
   otp       String
-  verified  Boolean  @default(false)
   expiresAt DateTime
   createdAt DateTime @default(now())
 }

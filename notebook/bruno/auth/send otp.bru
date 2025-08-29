@@ -1,0 +1,21 @@
+meta {
+  name: send otp
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:3000/auth/send-otp
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "email": "rdhruva12345@gmail.com"
+  }
+}
+
+settings {
+  encodeUrl: true
+}
